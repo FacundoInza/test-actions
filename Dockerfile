@@ -1,3 +1,12 @@
-FROM nginx:1.19-alpine
+FROM node:16-alpine
 
-ADD index.html /usr/share/nginx/html
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci --only=production
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
