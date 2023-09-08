@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: api-test
-        image: 913891584254.dkr.ecr.sa-east-1.amazonaws.com/test-actions:latest
+        image: 913891584254.dkr.ecr.sa-east-1.amazonaws.com/test-actions:db9b054e919152cd328c50e98aed527a49fb029d
         ports:
         - containerPort: 8080
