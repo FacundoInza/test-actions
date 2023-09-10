@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-deployment
+  name: test-actions-deployment
   labels:
-    app: api-test
+    app: test-actions
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api-test
+      app: test-actions
   template:
     metadata:
       labels:
-        app: api-test
+        app: test-actions
     spec:
       containers:
-      - name: api-test
-        image: 913891584254.dkr.ecr.sa-east-1.amazonaws.com/test-actions:db9b054e919152cd328c50e98aed527a49fb029d
+      - name: test-actions
+        image: 913891584254.dkr.ecr.sa-east-1.amazonaws.com/test-actions:31f3487681c03939c8bd22a0f962dec8fec446ad
         ports:
         - containerPort: 8080
