@@ -1,14 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 
-const { json, utlencoded } = express;
+const { json, urlencoded } = express;
 const app = express();
 const port = 8080;
 
 app.set("trust proxy", 1);
 
 app.use(json());
-app.use(utlencoded({ extended: false }));
+app.use(urlencoded({ extended: false }));
 
 const corsOptions = { origin: "*", optionSuccessStatus: 200 };
 app.use(cors(corsOptions));
